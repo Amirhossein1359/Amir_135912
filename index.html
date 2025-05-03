@@ -1,31 +1,71 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amir Shop</title>
-  <link rel="stylesheet" href="css/styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>فروشگاه آنلاین Amir</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
-    <h1>فروشگاه Amir</h1>
-    <a href="cart.html">سبد خرید</a>
-  </header>
+    <header>
+        <div class="logo">
+            <h1>فروشگاه آنلاین Amir</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">خانه</a></li>
+                <li><a href="#products">محصولات</a></li>
+                <li><a href="#support">پشتیبانی</a></li>
+                <li><a href="#cart">سبد خرید</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <main class="product-list">
-    <div class="product">
-      <h3>موبایل A51 سامسونگ</h3>
-      <p>قیمت: ۹,۵۰۰,۰۰۰ تومان</p>
-      <button onclick="addToCart('موبایل A51 سامسونگ', 9500000)">افزودن به سبد خرید</button>
-    </div>
-    <div class="product">
-      <h3>هدفون JBL</h3>
-      <p>قیمت: ۳,۲۰۰,۰۰۰ تومان</p>
-      <button onclick="addToCart('هدفون JBL', 3200000)">افزودن به سبد خرید</button>
-    </div>
-    <!-- محصولات دیگر -->
-  </main>
+    <section id="home">
+        <div class="banner">
+            <h2>خرید آنلاین با بهترین قیمت‌ها!</h2>
+        </div>
+    </section>
 
-  <script src="js/script.js"></script>
+    <section id="products">
+        <h2>محصولات پرفروش</h2>
+        <div class="product-list">
+            <!-- محصول 1 -->
+            <div class="product">
+                <img src="img/product1.jpg" alt="محصول 1">
+                <h3>موبایل سامسونگ</h3>
+                <p>قیمت: 5,000,000 تومان</p>
+                <button class="add-to-cart">افزودن به سبد خرید</button>
+            </div>
+            <!-- محصول 2 -->
+            <div class="product">
+                <img src="img/product2.jpg" alt="محصول 2">
+                <h3>هدفون بلوتوث</h3>
+                <p>قیمت: 1,200,000 تومان</p>
+                <button class="add-to-cart">افزودن به سبد خرید</button>
+            </div>
+            <!-- محصول 3 -->
+            <div class="product">
+                <img src="img/product3.jpg" alt="محصول 3">
+                <h3>لپ‌تاپ ایسوس</h3>
+                <p>قیمت: 10,000,000 تومان</p>
+                <button class="add-to-cart">افزودن به سبد خرید</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="support">
+        <h2>پشتیبانی</h2>
+        <p>برای هرگونه سوال یا پشتیبانی با شماره زیر تماس بگیرید:</p>
+        <p>شماره تماس: <strong>09361231433</strong></p>
+        <p>به نام: <strong>امیرحسین</strong></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 فروشگاه آنلاین Amir | تمامی حقوق محفوظ است</p>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
