@@ -3,41 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amir فروشگاه</title>
+  <title>Amir Shop</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
   <header>
     <h1>فروشگاه Amir</h1>
-    <nav>
-      <ul>
-        <li><a href="#">خانه</a></li>
-        <li><a href="#">محصولات</a></li>
-        <li><a href="#">سبد خرید</a></li>
-        <li><a href="#">پشتیبانی</a></li>
-      </ul>
-    </nav>
+    <a href="cart.html">سبد خرید</a>
   </header>
 
-  <section class="products">
-    <div class="product-card">
-      <img src="https://via.placeholder.com/200x200" alt="محصول" />
-      <h3>موبایل Samsung A53</h3>
-      <p>قیمت: 18,500,000 تومان</p>
-      <button>افزودن به سبد خرید</button>
+  <main class="product-list">
+    <div class="product">
+      <h3>موبایل A51 سامسونگ</h3>
+      <p>قیمت: ۹,۵۰۰,۰۰۰ تومان</p>
+      <button onclick="addToCart('موبایل A51 سامسونگ', 9500000)">افزودن به سبد خرید</button>
     </div>
-    <div class="product-card">
-      <img src="https://via.placeholder.com/200x200" alt="محصول" />
-      <h3>هدفون JBL Tune 510BT</h3>
-      <p>قیمت: 2,100,000 تومان</p>
-      <button>افزودن به سبد خرید</button>
+    <div class="product">
+      <h3>هدفون JBL</h3>
+      <p>قیمت: ۳,۲۰۰,۰۰۰ تومان</p>
+      <button onclick="addToCart('هدفون JBL', 3200000)">افزودن به سبد خرید</button>
     </div>
-  </section>
-
-  <footer>
-    <p>پشتیبانی: 09361231433</p>
-    <p>به نام امیرحسین</p>
-  </footer>
+    <!-- محصولات دیگر -->
+  </main>
 
   <script src="js/script.js"></script>
 </body>
