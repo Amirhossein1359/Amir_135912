@@ -1,35 +1,41 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-  <meta charset="UTF-8" />
-  <title>سبد خرید</title>
-  <link rel="stylesheet" href="css/styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>سبد خرید</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
-    <h1>سبد خرید شما</h1>
-    <a href="index.html">بازگشت به فروشگاه</a>
-  </header>
+    <header>
+        <div class="logo">
+            <h1>سبد خرید</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">خانه</a></li>
+                <li><a href="#cart">سبد خرید</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <main>
-    <ul id="cart-items"></ul>
-    <h3 id="total-price"></h3>
-  </main>
+    <section id="cart">
+        <h2>محصولات داخل سبد خرید</h2>
+        <div class="cart-items">
+            <!-- سبد خرید خالی یا محصولات -->
+        </div>
 
-  <script>
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const cartList = document.getElementById('cart-items');
-    const totalPriceEl = document.getElementById('total-price');
+        <div class="cart-summary">
+            <p>مجموع: <span id="total-price">0 تومان</span></p>
+            <button>تایید خرید</button>
+        </div>
+    </section>
 
-    let total = 0;
-    cart.forEach(item => {
-      const li = document.createElement('li');
-      li.textContent = `${item.title} - ${item.price.toLocaleString()} تومان`;
-      cartList.appendChild(li);
-      total += item.price;
-    });
+    <footer>
+        <p>&copy; 2025 فروشگاه آنلاین Amir | تمامی حقوق محفوظ است</p>
+    </footer>
 
-    totalPriceEl.textContent = `مجموع: ${total.toLocaleString()} تومان`;
-  </script>
+    <script src="js/script.js"></script>
 </body>
 </html>
