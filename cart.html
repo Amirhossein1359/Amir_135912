@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <title>سبد خرید</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>سبد خرید شما</h1>
+    <a href="index.html">بازگشت به فروشگاه</a>
+  </header>
+
+  <main>
+    <ul id="cart-items"></ul>
+    <h3 id="total-price"></h3>
+  </main>
+
+  <script>
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartList = document.getElementById('cart-items');
+    const totalPriceEl = document.getElementById('total-price');
+
+    let total = 0;
+    cart.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = `${item.title} - ${item.price.toLocaleString()} تومان`;
+      cartList.appendChild(li);
+      total += item.price;
+    });
+
+    totalPriceEl.textContent = `مجموع: ${total.toLocaleString()} تومان`;
+  </script>
+</body>
+</html>
