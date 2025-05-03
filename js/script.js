@@ -14,6 +14,8 @@ function addToCart(productId, productName, productPrice) {
 
 function updateCart() {
     const cartTable = document.getElementById("cart-table");
+    if (!cartTable) return;
+
     cartTable.innerHTML = '';
     
     cart.forEach(item => {
@@ -21,7 +23,7 @@ function updateCart() {
         row.innerHTML = `
             <td>${item.name}</td>
             <td>${item.quantity}</td>
-            <td>${item.price * item.quantity} تومان</td>
+            <td>${(item.price * item.quantity).toLocaleString()} تومان</td>
             <td><button onclick="removeFromCart(${item.id})">حذف</button></td>
         `;
         cartTable.appendChild(row);
@@ -39,7 +41,12 @@ function removeFromCart(productId) {
 function updateTotal() {
     let totalPrice = 0;
     cart.forEach(item => totalPrice += item.price * item.quantity);
-    document.getElementById("total-price").textContent = totalPrice;
+
+    const totalElement = document.getElementById("total-price");
+    const grandTotalElement = document.getElementById("grand-total");
+
+    if (totalElement) totalElement.textContent = totalPrice.toLocaleString();
+    if (grandTotalElement) grandTotalElement.textContent = totalPrice.toLocaleString();
 }
 
 function saveCartToLocalStorage() {
@@ -47,28 +54,43 @@ function saveCartToLocalStorage() {
 }
 
 function applyDiscount() {
-    const discountCode = document.getElementById("discount-code").value;
+    const discountCodeInput = document.getElementById("discount-code");
+    if (!discountCodeInput) return;
+
+    const discountCode = discountCodeInput.value.trim();
     let discount = 0;
 
     if (discountCode === "SUMMER10") {
-        discount = 10; // 10% discount
+        discount = 10;
     }
 
-    const totalPrice = parseInt(document.getElementById("total-price").textContent);
+    const totalText = document.getElementById("total-price").textContent.replace(/,/g, "");
+    const totalPrice = parseInt(totalText);
     const newTotal = totalPrice - (totalPrice * discount / 100);
-    document.getElementById("grand-total").textContent = newTotal;
+
+    const grandTotalElement = document.getElementById("grand-total");
+    if (grandTotalElement) grandTotalElement.textContent = newTotal.toLocaleString();
 }
 
 function checkout() {
-    alert("فرآیند خرید موفقیت‌آمیز بود!");
+    alert("فرآیند خرید با موفقیت انجام شد!");
+    cart = [];
+    updateCart();
+    saveCartToLocalStorage();
 }
 
 function openCart() {
-    document.getElementById("cart-modal").style.display = "flex";
+    const cartModal = document.getElementById("cart-modal");
+    if (cartModal) cartModal.style.display = "flex";
 }
 
 function closeCart() {
-    document.getElementById("cart-modal").style.display = "none";
+    const cartModal = document.getElementById("cart-modal");
+    if (cartModal) cartModal.style.display = "none";
 }
 
-document.getElementById("cart-button").addEventListener("click", openCart);
+const cartBtn = document.getElementById("cart-button");
+if (cartBtn) cartBtn.addEventListener("click", openCart);
+
+// اجرای اولیه برای نمایش سبد خرید
+updateCart();
