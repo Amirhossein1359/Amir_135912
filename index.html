@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>فروشگاه امیر</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>فروشگاه امیر</h1>
+    <button id="cart-button">سبد خرید</button>
+  </header>
+
+  <main>
+    <section class="products">
+      <div class="product">
+        <img src="https://via.placeholder.com/150" alt="محصول 1">
+        <h3>گوشی A14</h3>
+        <p>قیمت: 6,800,000 تومان</p>
+        <button onclick="addToCart(1, 'گوشی A14', 6800000)">افزودن به سبد</button>
+      </div>
+      <div class="product">
+        <img src="https://via.placeholder.com/150" alt="محصول 2">
+        <h3>هدفون JBL</h3>
+        <p>قیمت: 1,200,000 تومان</p>
+        <button onclick="addToCart(2, 'هدفون JBL', 1200000)">افزودن به سبد</button>
+      </div>
+      <div class="product">
+        <img src="https://via.placeholder.com/150" alt="محصول 3">
+        <h3>لپ‌تاپ لنوو</h3>
+        <p>قیمت: 23,500,000 تومان</p>
+        <button onclick="addToCart(3, 'لپ‌تاپ لنوو', 23500000)">افزودن به سبد</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="cart-modal" class="modal">
+    <div class="modal-content">
+      <span onclick="closeCart()" class="close">&times;</span>
+      <h2>سبد خرید</h2>
+      <table id="cart-table"></table>
+      <p>قیمت کل: <span id="total-price">0</span> تومان</p>
+      <input type="text" id="discount-code" placeholder="کد تخفیف">
+      <button onclick="applyDiscount()">اعمال تخفیف</button>
+      <p>قیمت نهایی: <span id="grand-total">0</span> تومان</p>
+      <button onclick="checkout()">پرداخت</button>
+    </div>
+  </div>
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>
