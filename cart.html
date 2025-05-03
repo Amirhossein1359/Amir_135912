@@ -3,37 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>سبد خرید</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
     <header>
-        <div class="logo">
-            <h1>سبد خرید</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">خانه</a></li>
-                <li><a href="#cart">سبد خرید</a></li>
-            </ul>
-        </nav>
+        <h1>سبد خرید</h1>
     </header>
 
-    <section id="cart">
-        <h2>محصولات داخل سبد خرید</h2>
-        <div class="cart-items">
-            <!-- سبد خرید خالی یا محصولات -->
-        </div>
+    <section id="cart-container">
+        <table id="cart-table">
+            <thead>
+                <tr>
+                    <th>محصول</th>
+                    <th>قیمت</th>
+                    <th>تعداد</th>
+                    <th>مجموع</th>
+                    <th>حذف</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <!-- کالاهای سبد خرید در اینجا قرار می‌گیرند -->
+            </tbody>
+        </table>
 
-        <div class="cart-summary">
-            <p>مجموع: <span id="total-price">0 تومان</span></p>
-            <button>تایید خرید</button>
+        <div id="cart-total">
+            <h2>جمع کل: <span id="total-price">0</span> تومان</h2>
+            <button id="checkout-btn">پرداخت</button>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 فروشگاه آنلاین Amir | تمامی حقوق محفوظ است</p>
+        <p>تمامی حقوق محفوظ است</p>
     </footer>
 
     <script src="js/script.js"></script>
